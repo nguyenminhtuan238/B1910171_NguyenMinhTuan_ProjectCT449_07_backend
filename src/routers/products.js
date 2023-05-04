@@ -1,0 +1,11 @@
+const express=require("express")
+const routes=express.Router()
+const products=require("../controller/products.controller")
+routes.get("/",products.findALL)
+routes.get("/:id",products.findone)
+routes.get("/search/:pd",products.search)
+routes.post("/",products.uploadImg,products.create)
+routes.delete("/:id",products.deteleone)
+routes.put("/:id",products.uploadImg,products.updateone)
+routes.put("/Kho/:id",products.updateKho)
+module.exports=routes
